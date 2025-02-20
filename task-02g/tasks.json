@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "work",
+    "description": "this is my work"
+  },
+  {
+    "id": 2,
+    "title": "exercise",
+    "description": "stretching + walk"
+  },
+  {
+    "id": 3,
+    "title": "meditation",
+    "description": "meditate for 15 mins"
+  },
+  {
+    "id": 4,
+    "title": "grocery restock",
+    "description": "from walmart"
+  },
+  {
+    "id": 5,
+    "title": "study",
+    "description": "cover up java and dsa "
+  }
+]

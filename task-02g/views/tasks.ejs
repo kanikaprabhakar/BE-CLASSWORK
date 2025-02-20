@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <center><h1 style="padding: 15px;">Task List</h1></center><hr style="border: 2px solid #3B1C32;">
+    
+    <ul class="task-list"  id="taskList">
+        <% tasks.forEach(task => { %>
+            <div class="task-wrapper">
+                <input type="checkbox" class="task-checkbox">
+                <li data-id="<%= task.id %>" class="task-item">
+                    <a href="/task?id=<%= task.id %>" class="task-link"><%= task.id %>. <%= task.title %></a>
+                </li>
+            </div>
+        <% }); %>
+        
+        
+    </ul>
+    <center><a href="/addTask"><button>Add New Task</button></a></center>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const taskList = document.getElementById("taskList");
+    
+            taskList.addEventListener("change", (event) => {
+                if (event.target.classList.contains("task-checkbox")) {
+                    const taskItem = event.target.nextElementSibling; // Get the <li> after checkbox
+                    taskItem.classList.toggle("completed"); // Apply strikethrough
+                    
+                    taskList.appendChild(taskItem.parentElement); // Move checked tasks to bottom
+                }
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
